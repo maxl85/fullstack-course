@@ -1,0 +1,231 @@
+---
+sidebar_position: 2
+---
+
+import BrowserWindow from '@site/src/components/BrowserWindow';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# CSS
+
+<div style={{maxWidth: 350}}>
+
+![CSS gif](./img/FirstWarpedInganue-size_restricted.gif)
+
+</div>
+
+- https://practicum.yandex.ru/blog/chto-takoe-css/
+- https://www.youtube.com/playlist?list=PLNkWIWHIRwMHUawuIEpPI_tOG7Mfhs_sA
+
+
+## CSS селекторы
+
+
+
+
+## Flexbox
+
+### Часто используемые кейсы:
+
+**Контейнер с отступами по краям**
+
+
+
+**Адаптивная сетка**
+
+Это такая сетка, которая подстраивает количество столбцов и строк в зависимости от разрешения экрана. То есть на экране смартфона сайт будет выглядеть иначе, чем на экране ноутбука или планшета, чтобы пользователю было комфортно взаимодействовать с интерфейсом. Такие сетки используются, например, для карточек товаров и интернет-магазинах. 
+
+<!-- <iframe style={{width: '100%', height: 400}} scrolling="no" title="Flexbox Card" src="https://codepen.io/Maxim-Lyashov/embed/zYMWqxp?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/Maxim-Lyashov/pen/zYMWqxp">
+  Flexbox Card</a> by Maxim Lyashov (<a href="https://codepen.io/Maxim-Lyashov">@Maxim-Lyashov</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe> -->
+
+Пример адаптивной сетки на **CSS Flexbox** и **CSS Grid**
+
+<Tabs>
+<TabItem value="html" label="HTML">
+<div style={{height: '380px', overflow: 'auto'}}>
+
+```html
+<div class="container">
+  <div class="grid">
+    <div class="item-wrap">
+      <div class="item"></div>
+    </div>
+    <div class="item-wrap">
+      <div class="item"></div>
+    </div>
+    <div class="item-wrap">
+      <div class="item"></div>
+    </div>
+    <div class="item-wrap">
+      <div class="item"></div>
+    </div>
+    <div class="item-wrap">
+      <div class="item"></div>
+    </div>
+    <div class="item-wrap">
+      <div class="item"></div>
+    </div>
+    <div class="item-wrap">
+      <div class="item"></div>
+    </div>
+    <div class="item-wrap">
+      <div class="item"></div>
+    </div>
+  </div>
+</div>
+```
+
+</div>
+</TabItem>
+
+<TabItem value="flexbox" label="CSS Flexbox">
+<div style={{height: '380px', overflow: 'auto'}}>
+
+```css
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.item-wrap {
+  box-sizing: border-box;
+  padding: 10px;
+  height: 150px;
+  flex-basis: 25%;
+}
+
+.item {
+  background: #aaa;
+  height: 100%;
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  .item-wrap {
+    flex-basis: 33.33%;
+  }
+}
+
+@media (max-width: 500px) {
+  .item-wrap {
+    flex-basis: 50%;
+  }
+}
+
+@media (max-width: 400px) {
+  .item-wrap {
+    flex-basis: 100%;
+  }
+}
+```
+
+</div>
+</TabItem>
+
+<TabItem value="grid" label="CSS Grid">
+<div style={{height: '380px', overflow: 'auto'}}>
+
+```css
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.item-wrap {
+  box-sizing: border-box;
+  height: 150px;
+  background: #aaa;
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 400px) {
+  .grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+```
+
+</div>
+</TabItem>
+
+<TabItem value="res" label="Результат">
+<BrowserWindow style={{height: '380px', overflow: 'auto'}}>
+  <div class="css-container">
+    <div class="css-flex-grid">
+      <div class="css-item-wrap">
+        <div class="css-item"></div>
+      </div>
+      <div class="css-item-wrap">
+        <div class="css-item"></div>
+      </div>
+      <div class="css-item-wrap">
+        <div class="css-item"></div>
+      </div>
+      <div class="css-item-wrap">
+        <div class="css-item"></div>
+      </div>
+      <div class="css-item-wrap">
+        <div class="css-item"></div>
+      </div>
+      <div class="css-item-wrap">
+        <div class="css-item"></div>
+      </div>
+      <div class="css-item-wrap">
+        <div class="css-item"></div>
+      </div>
+      <div class="css-item-wrap">
+        <div class="css-item"></div>
+      </div>
+    </div>
+  </div>
+</BrowserWindow>
+</TabItem>
+
+</Tabs>
+
+
+
+
+
+**Footer внизу страницы**
+
+**Ссылки**
+1. [Полное руководство по Flexbox выравниванию](https://webdesign.tutsplus.com/ru/a-comprehensive-guide-to-flexbox-alignment--cms-30183t) 
+
+- https://tpverstak.ru/flex-cheatsheet/
+- https://tproger.ru/translations/how-css-flexbox-works/
+- https://flexboxfroggy.com/#ru
+- https://www.youtube.com/playlist?list=PLNkWIWHIRwMG0EUBS8rvTRVNL9IcxcawW
+
+
+
+
+## CSS Grid
+
+

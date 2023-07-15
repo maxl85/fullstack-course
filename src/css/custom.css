@@ -36,3 +36,43 @@ html[data-theme='dark'] .navbar .navbar__logo {
 html[data-theme='dark'] aside img {
   content: url(/img/dark-logo.svg)
 }
+
+.css-container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+.css-flex-grid {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.css-item-wrap {
+  box-sizing: border-box;
+  padding: 10px;
+  height: 150px;
+  flex-basis: 25%;
+}
+
+.css-item {
+  background: #aaa;
+  height: 100%;
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  .css-item-wrap {
+    flex-basis: 33.33%;
+  }
+}
+
+@media (max-width: 500px) {
+  .css-item-wrap {
+    flex-basis: 50%;
+  }
+}
+
+@media (max-width: 400px) {
+  .css-item-wrap {
+    flex-basis: 100%;
+  }
+}
