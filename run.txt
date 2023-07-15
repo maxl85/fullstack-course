@@ -1,0 +1,3 @@
+npx create-docusaurus@latest fullstack-course classic --typescript
+
+cmd /C 'set "GIT_USER=maxl85" && npm run deploy'

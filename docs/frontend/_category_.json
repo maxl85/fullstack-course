@@ -1,0 +1,9 @@
+{
+  "label": "Фронтенд (Frontend)",
+  "position": 10,
+  "link": {
+    "type": "generated-index",
+    "title": "Фронтенд (Frontend)",
+    "description": "5 minutes to learn the most important Docusaurus concepts."
+  }
+}
