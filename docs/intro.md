@@ -7,6 +7,13 @@ sidebar_position: 1
 
 Let's discover **Docusaurus in less than 5 minutes**.
 
+```javascript
+function foo() {
+  let a = 1;
+  return a * 2;
+}
+```
+
 ## Getting Started
 
 Get started by **creating a new site**.
