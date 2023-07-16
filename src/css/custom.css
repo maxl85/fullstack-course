@@ -76,3 +76,26 @@ html[data-theme='dark'] aside img {
     flex-basis: 100%;
   }
 }
+
+
+
+.fb-container {
+  min-height: 220px;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.fb-header {
+  background: #abc;
+  padding: 10px 0;
+}
+
+.fb-footer {
+  background: #aaa;
+  padding: 10px 0;
+  margin-top: auto;
+}
+
+.browserWindowBody_src-components-BrowserWindow-styles-module:has(.fb-container) {
+  padding: 0 !important;
+}
