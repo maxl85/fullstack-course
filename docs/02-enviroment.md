@@ -13,6 +13,19 @@ https://nodejs.org/
 - https://code.visualstudio.com/
 - https://practicum.yandex.ru/blog/vsyo-o-visual-studio-code/
 
+### Основные возможности Emmet
+
+Чтобы набрать такую разметку, используя возможности Emmet, необходимо набрать
+1. `.container` и нажать 2 раза Enter
+2.  `.item*3` и нажать Enter
+
+```html
+<div class="container">
+  <div class="item"></div>
+  <div class="item"></div>
+  <div class="item"></div>
+</div>
+```
 
 ## Git
 
