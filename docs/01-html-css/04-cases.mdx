@@ -1,0 +1,372 @@
+---
+sidebar_position: 4
+---
+
+import BrowserWindow from '@site/src/components/BrowserWindow';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Часто используемые кейсы
+Здесь представлены решения часто используемых на практике кейсов, которые вызывают трудности у студентов.
+
+## Position relative/absolut
+
+## Адаптивные изображения
+
+Адаптивные изображения будут автоматически корректироваться в соответствии с размером экрана.
+
+Важно знать, что вы всегда **должны использовать относительные единицы** для свойства ширины, такие как процент, а не абсолютные единицы, такие как пиксели.
+
+```html
+<img src="image.jpg" alt="image" class="responsive">
+```
+
+Если требуется масштабировать изображение как вверх, так и вниз при отклике, задайте для свойства CSS значение `width: 100%` и значение `height: auto`:
+
+```css
+.responsive {
+  width: 100%;
+  height: auto;
+}
+```
+
+Если требуется, чтобы изображение было масштабировано, но никогда не масштабируется до размера, превышающего его исходный размер, используйте `max-width: 100%`:
+
+```css
+.responsive {
+  max-width: 100%;
+  height: auto;
+}
+```
+
+Если требуется ограничить адаптивный образ максимальным размером, используйте свойство с выбранным `max-width` пиксельным значением:
+
+```css
+.responsive {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+}
+```
+
+Чтобы иметь больший контроль над вашими изображениями, CSS предоставляет другое свойство, называемое `object-fit`. При необходимости вы также можете использовать свойство `object-position` (в дополнение к `object-fit`), чтобы сфокусироваться на определенной части изображения.
+
+```css
+.responsive {
+  width: 100%;
+  height: 300px; 
+  object-fit: cover;
+  object-position: bottom;
+}
+```
+
+## Контейнер с отступами по краям
+
+Веб-сайт должен иметь ограничивающую оболочку (контейнер), облегчающую чтение. Без использования элемента-обёртки дочерние элементы будут размещаться, ориентируясь на края экрана. Это может быть неудобным для пользователей. Особенно для тех, которые работают на больших экранах.
+
+Для создания контейнера необходимо все дочерние элементы обернуть одним родительским тэгом `div` с классом `.container` или `.wrapper` и задать ему ширину.
+
+Свойство `width` для настройки ширины контейнеров использовать не рекомендуется. Дело в том, что это приводит к необходимости горизонтального скроллинга страницы в том случае, если ширина области окна браузера, доступной для вывода страницы, меньше указанной ширины. Решить эту проблему можно, воспользовавшись свойством `max-width`.
+
+Для того чтобы выровнять контейнер по центру страницы, нужно, при настройке его внешних отступов, воспользоваться значением `auto` для левого и правого отступов `margin: 0 auto;`
+
+<Tabs>
+<TabItem value="html" label="HTML">
+<div style={{height: '140px', overflow: 'auto'}}>
+
+```html
+<div class="container">
+  <main>...</main>
+</div>
+```
+
+</div>
+</TabItem>
+
+<TabItem value="css" label="CSS">
+<div style={{height: '140px', overflow: 'auto'}}>
+
+```css
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+```
+
+</div>
+</TabItem>
+
+</Tabs>
+
+
+## Адаптивная сетка
+
+Это такая сетка, которая подстраивает количество столбцов в зависимости от разрешения экрана. То есть на экране смартфона сайт будет выглядеть иначе, чем на экране ноутбука или планшета, чтобы пользователю было комфортно взаимодействовать с интерфейсом. Такие сетки используются, например, для карточек товаров в интернет-магазинах. 
+
+Пример адаптивной сетки на **Flexbox** и **CSS Grid**
+
+<Tabs>
+<TabItem value="html" label="HTML">
+<div style={{height: '380px', overflow: 'auto'}}>
+
+```html
+<div class="container">
+  <div class="grid">
+    <div class="item-wrap">
+      <div class="item"></div>
+    </div>
+    <div class="item-wrap">
+      <div class="item"></div>
+    </div>
+    <div class="item-wrap">
+      <div class="item"></div>
+    </div>
+    <div class="item-wrap">
+      <div class="item"></div>
+    </div>
+    <div class="item-wrap">
+      <div class="item"></div>
+    </div>
+    <div class="item-wrap">
+      <div class="item"></div>
+    </div>
+    <div class="item-wrap">
+      <div class="item"></div>
+    </div>
+    <div class="item-wrap">
+      <div class="item"></div>
+    </div>
+  </div>
+</div>
+```
+
+</div>
+</TabItem>
+
+<TabItem value="flexbox" label="CSS Flexbox">
+<div style={{height: '380px', overflow: 'auto'}}>
+
+```css
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.item-wrap {
+  box-sizing: border-box;
+  padding: 10px;
+  height: 150px;
+  flex-basis: 25%;
+}
+
+.item {
+  background: #aaa;
+  height: 100%;
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  .item-wrap {
+    flex-basis: 33.33%;
+  }
+}
+
+@media (max-width: 500px) {
+  .item-wrap {
+    flex-basis: 50%;
+  }
+}
+
+@media (max-width: 400px) {
+  .item-wrap {
+    flex-basis: 100%;
+  }
+}
+```
+
+</div>
+</TabItem>
+
+<TabItem value="grid" label="CSS Grid">
+<div style={{height: '380px', overflow: 'auto'}}>
+
+```css
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.item-wrap {
+  box-sizing: border-box;
+  height: 150px;
+  background: #aaa;
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 400px) {
+  .grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+```
+
+</div>
+</TabItem>
+
+<TabItem value="res" label="Результат">
+<BrowserWindow style={{height: '380px', overflow: 'auto'}}>
+  <div className="css-container">
+    <div className="css-flex-grid">
+      <div className="css-item-wrap">
+        <div className="css-item"></div>
+      </div>
+      <div className="css-item-wrap">
+        <div className="css-item"></div>
+      </div>
+      <div className="css-item-wrap">
+        <div className="css-item"></div>
+      </div>
+      <div className="css-item-wrap">
+        <div className="css-item"></div>
+      </div>
+      <div className="css-item-wrap">
+        <div className="css-item"></div>
+      </div>
+      <div className="css-item-wrap">
+        <div className="css-item"></div>
+      </div>
+      <div className="css-item-wrap">
+        <div className="css-item"></div>
+      </div>
+      <div className="css-item-wrap">
+        <div className="css-item"></div>
+      </div>
+    </div>
+  </div>
+</BrowserWindow>
+</TabItem>
+
+</Tabs>
+
+
+## Footer внизу страницы
+
+Как прижать footer сайта в самый низ окна браузера, чтобы страница при этом выглядела вытянутой на всю высоту, вне зависимости от объема контента? Сделать это можно с помощью Flexbox и CSS Grid.
+
+<Tabs>
+<TabItem value="html" label="HTML">
+<div style={{height: '270px', overflow: 'auto'}}>
+
+```html
+<div class="container">
+  <header class="header">header</header>
+  <main class="main">main</main>
+  <footer class="footer">footer</footer>
+</div>
+```
+
+</div>
+</TabItem>
+
+<TabItem value="flexbox" label="CSS Flexbox">
+<div style={{height: '270px', overflow: 'auto'}}>
+
+```css
+body {
+  margin: 0;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.header {
+  background: #abc;
+  padding: 10px 0;
+}
+
+.footer {
+  background: #aaa;
+  padding: 10px 0;
+  margin-top: auto;
+}
+```
+
+</div>
+</TabItem>
+
+<TabItem value="grid" label="CSS Grid">
+<div style={{height: '270px', overflow: 'auto'}}>
+
+```css
+body {
+  margin: 0;
+}
+
+.container {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.header {
+  background: #abc;
+  padding: 10px 0;
+}
+
+.footer {
+  background: #aaa;
+  padding: 10px 0;
+  margin-top: auto;
+}
+```
+
+</div>
+</TabItem>
+
+<TabItem value="res" label="Результат">
+<BrowserWindow style={{height: '270px', overflow: 'auto'}}>
+  <div className="fb-container">
+    <header className="fb-header">header</header>
+    <main className="fb-main">main</main>
+    <footer className="fb-footer">footer</footer>
+  </div>
+</BrowserWindow>
+</TabItem>
+
+</Tabs>
+
+
+
+
+
+
+
+
+

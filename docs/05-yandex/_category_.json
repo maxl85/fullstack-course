@@ -1,0 +1,9 @@
+{
+  "label": "Yandex Cloud",
+  "position": 16,
+  "link": {
+    "type": "generated-index",
+    "title": "Yandex Cloud",
+    "description": "Подготовка и деплой проекта в Yandex Cloud"
+  }
+}

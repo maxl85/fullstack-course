@@ -1,0 +1,9 @@
+{
+  "label": "Основы бэкенд-разработки",
+  "position": 16,
+  "link": {
+    "type": "generated-index",
+    "title": "Основы бэкенд-разработки",
+    "description": "Создание REST API с использованием фреймворка NestJS"
+  }
+}

@@ -1,9 +1,10 @@
 ---
-sidebar_position: 3
+sidebar_position: 1
 ---
 
-# Chrome DevTools
+# Введение в React
 
 https://practicum.yandex.ru/blog/devtools-instrumenty-razrabotchika/
+
 
 

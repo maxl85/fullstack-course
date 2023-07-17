@@ -1,34 +1,28 @@
 ---
-sidebar_position: 6
+sidebar_position: 4
 ---
 
-# Задание для верстки
+# Индивидуальные проекты
+
+При прохождении курса предполагается поэтапное создание полноценного веб-приложения, состоящее из фронтенд и бэкенд частей.
+
+## Бэкенд
+На бэкенде необходимо создать REST API с использованием фреймворка NestJS, реализующий CRUD-операции. В качестве БД будет использоваться PostgreSQL.
+
+## Фронтенд
+Необходимо реализовать с использованием фреймворка Next.js.
 
 По выбранному макету сайта в Figma:
-
 1. На Next.js сверстать главную страницу сайта, используя компонентный подход.
 2. Сделать адаптивную верстку до 320рх.
 3. Исходники выложить в открытый репозиторий на GitHub.
-4. Разместить сайт на GitHub Pages или Vercel
-
-Для верстки необходимо выбрать готовый макет в Figma, который удовлетворяет следующим требованиям:
-
-1. Это не должен быть одностраничный лэндинг.
-2. Наличие макетов страниц для различных типов устройств (десктоп, планшет, моб. телефон).
-
-Макет который будете верстать, можете выбрать тут:
-- https://t.me/+U8l9fli3GbXWnFME
-- https://t.me/figma2html
-- https://t.me/figmatamplates
-- https://t.me/figma_start
-- https://t.me/maketforfigma
-- https://t.me/FigmaMaket
-- https://t.me/figma_templates
-- https://vk.com/figma_templates
-- https://vk.com/figma_makets
-- https://templatica.pro/
+4. Разместить сайт на GitHub Pages или Vercel.
+5. Разместить сайт на Yandex Cloud. ????
 
 
+
+
+**Макеты для верстки**:
 
 1. https://www.figma.com/file/eSmiHlfi8r43qqY80zTZhL/%D0%A1%D0%B0%D0%BD%D1%82%D0%BE%D1%80%D0%B8%D0%BD%D0%B8-(Copy)?type=design&t=ZCnMlmKUGS3PRBt7-6
 2. https://www.figma.com/file/CH6HDMzyhrvBrWIfxFHrpK/Lavka-Roz-(Copy)?type=design&t=ZCnMlmKUGS3PRBt7-6
